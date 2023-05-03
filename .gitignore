@@ -1,4 +1,3 @@
 *.db
-*.sql
 *.txt
 test.py
