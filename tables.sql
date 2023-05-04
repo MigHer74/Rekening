@@ -1,6 +1,7 @@
 CREATE TABLE IF NOT EXISTS 'names' (
     id VARCHAR(6) PRIMARY KEY,
-    name VARCHAR(50)
+    name VARCHAR(50),
+    active BOOL DEFAULT '1'
 );
 
 CREATE TABLE IF NOT EXISTS 'documents' (
