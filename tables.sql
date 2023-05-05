@@ -1,3 +1,10 @@
+CREATE TABLE IF NOT EXISTS 'company' (
+    id_com INTEGER PRIMARY KEY,
+    com_name VARCHAR(50) NOT NULL,
+    com_init_rec INTEGER NOT NULL,
+    com_init_doc VARCHAR(6) NOT NULL
+);
+
 CREATE TABLE IF NOT EXISTS 'receiver' (
     id_rec VARCHAR(6) PRIMARY KEY,
     rec_name VARCHAR(50),
