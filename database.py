@@ -13,3 +13,9 @@ def verify_tables():
     curdb.executescript(scrvar)
     condb.commit()
     condb.close()
+
+def verify_company():
+    condb = conect_db()
+    curdb = condb.cursor()
+    datdb = curdb.execute("SELECT * FROM 'company'").fetchall()
+    return datdb
