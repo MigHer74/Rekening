@@ -5,7 +5,7 @@ def conect_db():
     condb = sqlite3.connect("rekening.db")
     return condb
 
-def verify_data():
+def verify_tables():
     condb = conect_db()
     curdb = condb.cursor()
     scrsql = open("tables.sql")
