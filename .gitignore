@@ -1,5 +1,6 @@
 *.db
 *.txt
+*.png
 test.py
 __pycache__/
 .vscode/
