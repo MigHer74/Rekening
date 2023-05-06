@@ -9,5 +9,9 @@ mw.configure(background="#f0f0f0")
 mwicon = PhotoImage(file="icon.png")
 mw.iconphoto(True, mwicon)
 
+# Main Windod Labels
+mwl1 = Label(mw, text="Buscar Beneficiario", font=(
+    "Arial", 10, "bold")).place(x=25, y=25)
+
 
 mw.mainloop()
