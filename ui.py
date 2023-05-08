@@ -22,11 +22,24 @@ mwl1 = Label(mw, text="Buscar Beneficiario", font=(
 
 # Main Window Buttons
 mwbs = Button(mw, text="Buscar", width=15,
-              command=btnSearch).place(x=490, y=23)
+              command=btnSearch).place(x=500, y=23)
 
 # Main Window Entry
 mwes = Entry(mw, width=50)
 mwes.place(x=160, y=27)
+
+# Main Window ListBox
+mwf1 = Frame()
+mws1 = Scrollbar(mwf1,orient=VERTICAL)
+mwlb1 = Listbox(mwf1,yscrollcommand=mws1.set,width=50,height=34,activestyle=NONE)
+mws1.config(command=mwlb1.yview)
+mws1.pack(side=RIGHT, fill=Y)
+
+for i in range(1,101):
+    mwlb1.insert(END,f"Elemento {i}")
+
+mwlb1.pack()
+mwf1.place(x=160,y=55)
 
 
 mw.mainloop()
