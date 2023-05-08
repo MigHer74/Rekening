@@ -43,7 +43,10 @@ mwlb1.pack()
 mwf1.place(x=160,y=55)
 
 # Main Window Footer
-mwftl = Label(mw,text="Desarrollado por Miguel Hernandez/MH Services - 2023",font=("Arial",7)).place(x=10,y=624)
+mwft1 = Frame(mw,height=25,bg="#AF7AC5")
+mwft1.pack(fill="x",side="bottom")
+Label(mwft1,text="Desarrollado por Miguel Hernandez/MH Services", padx=7,bg="#AF7AC5",font=("Arial",7,"bold")).pack(side="left")
+Label(mwft1,text="2023", padx=7,bg="#AF7AC5",font=("Arial",7,"bold")).pack(side="right")
 
 # Main Window Loop
 mw.mainloop()
