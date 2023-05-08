@@ -10,7 +10,7 @@ def btnSearch():
 # Main Window
 mw = Tk()
 mw.title("Rekening - Control de Cheques")
-mw.geometry("1000x700")
+mw.geometry("700x650")
 mw.resizable(False, False)
 mw.configure(background="#f0f0f0")
 mwicon = PhotoImage(file="icon.png")
@@ -22,7 +22,7 @@ mwl1 = Label(mw, text="Buscar Beneficiario", font=(
 
 # Main Window Buttons
 mwbs = Button(mw, text="Buscar", width=15,
-              command=btnSearch).place(x=550, y=25)
+              command=btnSearch).place(x=490, y=23)
 
 # Main Window Entry
 mwes = Entry(mw, width=50)
