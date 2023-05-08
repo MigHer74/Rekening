@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter.ttk import Separator
 
 
 def btnSearch():
@@ -29,7 +30,7 @@ mwes = Entry(mw, width=50)
 mwes.place(x=160, y=27)
 
 # Main Window ListBox
-mwf1 = Frame()
+mwf1 = Frame(mw)
 mws1 = Scrollbar(mwf1,orient=VERTICAL)
 mwlb1 = Listbox(mwf1,yscrollcommand=mws1.set,width=50,height=34,activestyle=NONE)
 mws1.config(command=mwlb1.yview)
@@ -41,5 +42,8 @@ for i in range(1,101):
 mwlb1.pack()
 mwf1.place(x=160,y=55)
 
+# Main Window Footer
+mwftl = Label(mw,text="Desarrollado por Miguel Hernandez/MH Services - 2023",font=("Arial",7)).place(x=10,y=624)
 
+# Main Window Loop
 mw.mainloop()
