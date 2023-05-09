@@ -30,6 +30,7 @@ def btnSetup():
 def btnExit():
     mw.destroy()
 
+
 def closeDisable():
     pass
 
