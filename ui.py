@@ -34,7 +34,7 @@ def btnExit():
 # Main Window
 mw = Tk()
 mw.title("Rekening - Control de Cheques")
-mw.geometry("700x650")
+mw.geometry("546x575")
 mw.resizable(False, False)
 mwicon = PhotoImage(file="icon.png")
 mw.iconphoto(True, mwicon)
@@ -67,12 +67,12 @@ mwbx = Button(mw, text="Salir", width=15,
 # Main Window Entry & ListBox
 mwlf1 = LabelFrame(mw, text=" Receptor ")
 mwes = Entry(mwlf1, width=54).pack(padx=10, pady=5)
-mwlf1.pack(anchor="nw", padx=10, pady=10)
+mwlf1.pack(anchor="nw", padx=14, pady=10)
 
 mwlf2 = LabelFrame(mw)
 mwlfs = Scrollbar(mwlf2, orient=VERTICAL, width=18)
 mwlfl = Listbox(mwlf2, yscrollcommand=mwlfs.set,
-                width=51, height=33, activestyle=NONE)
+                width=51, height=28, activestyle=NONE)
 mwlfs.config(command=mwlfl.yview)
 mwlfs.pack(side=RIGHT, fill=Y)
 
@@ -80,7 +80,7 @@ for i in range(1, 101):
     mwlfl.insert(END, f" Elemento {i} ")
 
 mwlfl.pack(padx=10, pady=15)
-mwlf2.place(x=10, y=56)
+mwlf2.place(x=14, y=56)
 
 
 # Main Window Footer
