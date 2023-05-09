@@ -1,9 +1,34 @@
 from tkinter import *
 
+
 def btnSearch():
     print("Search Button Pressed")
     dataSearch = mwes.get()
     print("Value to search", dataSearch)
+
+
+def btnNew():
+    print("New Button Pressed")
+
+
+def btnModify():
+    print("Modify Button Pressed")
+
+
+def btnPrint():
+    print("Print Button Pressed")
+
+
+def btnVault():
+    print("Vault Button Pressed")
+
+
+def btnSetup():
+    print("SetUp Button Pressed")
+
+
+def btnExit():
+    mw.destroy()
 
 
 # Main Window
@@ -17,7 +42,26 @@ mw.iconphoto(True, mwicon)
 
 # Main Window Buttons
 mwbs = Button(mw, text="Buscar", width=15,
-              command=btnSearch).place(x=500, y=23)
+              command=btnSearch).place(x=400, y=23)
+
+mwlfb1 = LabelFrame(mw, text=" Receptor ")
+mwbn = Button(mwlfb1, text="Nuevo", width=15,
+              command=btnNew).pack(padx=10, pady=10)
+mwbm = Button(mwlfb1, text="Modificar", width=15,
+              command=btnModify).pack(pady=10)
+mwlfb1.place(x=388, y=80)
+
+mwlfb2 = LabelFrame(mw, text=" Acciones ")
+mwbp = Button(mwlfb2, text="Cheques a Imprimir", width=15,
+              command=btnPrint).pack(padx=10, pady=10)
+mwbv = Button(mwlfb2, text="Boveda", width=15,
+              command=btnVault).pack(pady=10)
+mwbv = Button(mwlfb2, text="Configuracion", width=15,
+              command=btnSetup).pack(pady=20)
+mwlfb2.place(x=388, y=250)
+
+mwbx = Button(mw, text="Salir", width=15,
+              command=btnExit).place(x=400, y=500)
 
 
 # Main Window Entry & ListBox
