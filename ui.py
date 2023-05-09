@@ -30,6 +30,9 @@ def btnSetup():
 def btnExit():
     mw.destroy()
 
+def closeDisable():
+    pass
+
 
 # Main Window
 mw = Tk()
@@ -38,6 +41,7 @@ mw.geometry("546x575")
 mw.resizable(False, False)
 mwicon = PhotoImage(file="icon.png")
 mw.iconphoto(True, mwicon)
+mw.protocol("WM_DELETE_WINDOW", closeDisable)
 
 
 # Main Window Buttons
