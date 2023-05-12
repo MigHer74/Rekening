@@ -9,12 +9,16 @@ def cancelBtn():
     ndw.destroy()
 
 
+def closeDisable():
+    pass
+
+
 ndw = Tk()
 ndw.title("Nuevo Cheque")
 ndw.geometry("720x220")
 ndwicon = PhotoImage(file="icon.png")
 ndw.iconphoto(True, ndwicon)
-
+ndw.protocol("WM_DELETE_WINDOW", closeDisable)
 
 # Data Examples
 idValue = StringVar()
@@ -51,8 +55,9 @@ Entry(ndlf2, width=100).place(x=85, y=157)
 
 # New Document Window - Buttons Ok & Cancel
 
-Button(ndw, text="Aceptar", width=15).place(x=420, y=33)
-Button(ndw, text="Cancelar", width=15).place(x=570, y=33)
+Button(ndw, text="Aceptar", width=15, command=okBtn).place(x=420, y=33)
+Button(ndw, text="Cancelar", width=15,
+       command=cancelBtn).place(x=570, y=33)
 
 
 # New Document Window Loop
