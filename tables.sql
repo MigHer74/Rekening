@@ -13,9 +13,9 @@ CREATE TABLE IF NOT EXISTS 'receiver' (
 
 CREATE TABLE IF NOT EXISTS 'documents' (
     id_doc VARCHAR(6) PRIMARY KEY,
-    doc_document VARCHAR(6),
     doc_date DATE,
-    doc_amount FLOAT
+    doc_amount FLOAT,
+    doc_concept VARCHAR(50)
 );
 
 CREATE TABLE IF NOT EXISTS 'vault' (
