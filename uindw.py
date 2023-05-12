@@ -1,5 +1,14 @@
 from tkinter import *
 
+
+def okBtn():
+    pass
+
+
+def cancelBtn():
+    ndw.destroy()
+
+
 ndw = Tk()
 ndw.title("Nuevo Cheque")
 ndw.geometry("720x220")
