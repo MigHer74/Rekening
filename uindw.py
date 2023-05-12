@@ -17,7 +17,7 @@ nameValue.set("El nombre del receptor")
 
 # New Document Window - Label Frame & Receptor Data
 
-ndlf1 = LabelFrame(ndw, text=" Receptor ", width=350,
+ndlf1 = LabelFrame(ndw, text=" Receptor ", width=380,
                    height=65).place(x=10, y=10)
 Label(ndlf1, textvariable=idValue, font=(
     "Arial", 10, "bold")).place(x=20, y=35)
@@ -38,6 +38,12 @@ Entry(ndlf2, width=15).place(x=235, y=117)
 
 Label(ndlf2, text="Concepto:").place(x=20, y=155)
 Entry(ndlf2, width=100).place(x=85, y=157)
+
+
+# New Document Window - Buttons Ok & Cancel
+
+Button(ndw, text="Aceptar", width=15).place(x=420, y=33)
+Button(ndw, text="Cancelar", width=15).place(x=570, y=33)
 
 
 # New Document Window Loop
