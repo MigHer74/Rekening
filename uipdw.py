@@ -8,6 +8,12 @@ pdlw.resizable(False, False)
 pdlwicon = PhotoImage(file="icon.png")
 pdlw.iconphoto(True, pdlwicon)
 
+# Print Document List Window  - Label Frame
+
+pdlwlf = LabelFrame(pdlw, text=" Información de Cheques ",
+                    width=678, height=450)
+pdlwlf.place(x=12, y=5)
+
 
 # Print Document List Window Loop
 
