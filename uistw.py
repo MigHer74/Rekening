@@ -3,7 +3,7 @@ from tkinter import *
 
 def win_setup():
     stw = Tk()
-    stw.title("Configuración")
+    stw.title("Rekening - Configuración")
     stw.geometry("580x210")
     stw.resizable(False, False)
     stwicon = PhotoImage(file="icon.png")
