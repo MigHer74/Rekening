@@ -14,7 +14,7 @@ def closeDisable():
 
 
 ndw = Tk()
-ndw.title("Nuevo Cheque")
+ndw.title("Rekening - Nuevo Cheque")
 ndw.geometry("720x220")
 ndwicon = PhotoImage(file="icon.png")
 ndw.iconphoto(True, ndwicon)
