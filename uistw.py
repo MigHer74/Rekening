@@ -1,9 +1,19 @@
 from tkinter import *
+import database as db
 
 
 def win_setup():
     def oksetup():
-        pass
+        idcomp = entryval1.get()
+        nomcom = entryval2.get()
+        idrece = entryval3.get()
+        numfol = entryval4.get()
+
+        datacom = (idcomp, nomcom, idrece, numfol)
+
+        db.insert_company_info(datacom)
+
+        stw.destroy()
 
     def nosetup():
         stw.destroy()
