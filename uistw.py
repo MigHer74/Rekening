@@ -18,12 +18,16 @@ def win_setup():
     def nosetup():
         stw.destroy()
 
+    def closeDisable():
+        pass
+
     stw = Tk()
     stw.title("Rekening - Configuración")
     stw.geometry("580x210")
     stw.resizable(False, False)
     stwicon = PhotoImage(file="icon.png")
     stw.iconphoto(True, stwicon)
+    stw.protocol("WM_DELETE_WINDOW", closeDisable)
 
     # SetUp Windows - Variables Declaration
 
