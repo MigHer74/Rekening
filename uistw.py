@@ -2,7 +2,7 @@ from tkinter import *
 import database as db
 
 
-def win_setup():
+def win_setup(ws_status):
     def oksetup():
         idcomp = entryval1.get()
         nomcom = entryval2.get()
@@ -36,8 +36,9 @@ def win_setup():
     entryval3 = StringVar()
     entryval4 = IntVar()
 
-    entryval1.set(1)
-    entryval3.set("BEN-001")
+    if ws_status:
+        entryval1.set(1)
+        entryval3.set("BEN-001")
 
     # SetUp Window - General Information
 
