@@ -30,9 +30,11 @@ def insert_company_info(valdb):
     condb.commit()
     condb.close()
 
+
 def modify_company_info(valdb):
     condb = conect_db()
     curdb = condb.cursor()
-    datdb = curdb.execute("UPDATE 'company' SET com_name=?, com_init_rec=?, com_init_doc=? WHERE id_com=1", (valdb))
+    datdb = curdb.execute(
+        "UPDATE 'company' SET com_name = ?, com_init_rec = ?, com_init_doc = ? WHERE id_com = 1", (valdb))
     condb.commit()
     condb.close()
