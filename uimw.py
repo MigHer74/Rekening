@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import messagebox
 import database as db
 
 def win_main():
@@ -11,6 +12,8 @@ def win_main():
             mwbm.config(state=DISABLED)
             mwbp.config(state=DISABLED)
             mwbv.config(state=DISABLED)
+
+        messagebox.showinfo(title="Información Inicial", message='Seleccione "Configuración" e introduzca los valores iniciales o seleccione "Salir"')
 
     def btnSearch():
         print("Search Button Pressed")
