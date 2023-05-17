@@ -1,9 +1,9 @@
 from tkinter import *
-
+import database as db
 
 def win_main():
     def widState(state):
-        if state:
+        if not state:
             mwes.config(state=DISABLED)
             mwlfl.config(bg="#f0f0f0")
             mwbs.config(state=DISABLED)
@@ -103,7 +103,10 @@ def win_main():
     Label(mwft1, text="2023", padx=7, bg="#AF7AC5",
           font=("Arial", 7, "bold")).pack(side="right")
     
-    widState(True)
+    # Functions when starting the window.
+    initial = db.verify_company()
+    
+    widState(initial)
 
     # Main Window Loop
     mw.mainloop()
