@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 import database as db
+import uistw as swst
 
 def win_main():
     def widState(state):
@@ -13,7 +14,7 @@ def win_main():
             mwbp.config(state=DISABLED)
             mwbv.config(state=DISABLED)
 
-        messagebox.showinfo(title="Información Inicial", message='Seleccione "Configuración" e introduzca los valores iniciales o seleccione "Salir"')
+            messagebox.showinfo(title="Información Inicial", message='Seleccione "Configuración" e introduzca los valores iniciales o seleccione "Salir"')
 
     def btnSearch():
         print("Search Button Pressed")
@@ -33,7 +34,7 @@ def win_main():
         print("Vault Button Pressed")
 
     def btnSetup():
-        print("SetUp Button Pressed")
+        swst.win_setup(initial)
 
     def btnExit():
         mw.destroy()
