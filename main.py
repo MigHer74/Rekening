@@ -1,6 +1,5 @@
 import os
 import database as db
-import uistw as st
 import uimw as mw
 
 
