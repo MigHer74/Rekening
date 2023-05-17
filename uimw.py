@@ -2,8 +2,10 @@ from tkinter import *
 
 
 def win_main():
-    def btnstate(state):
+    def widState(state):
         if state:
+            mwes.config(state=DISABLED)
+            mwlfl.config(bg="#f0f0f0")
             mwbs.config(state=DISABLED)
             mwbn.config(state=DISABLED)
             mwbm.config(state=DISABLED)
@@ -76,7 +78,8 @@ def win_main():
 
     # Main Window Entry & ListBox
     mwlf1 = LabelFrame(mw, text=" Receptor ")
-    mwes = Entry(mwlf1, width=54).pack(padx=10, pady=5)
+    mwes = Entry(mwlf1, width=54)
+    mwes.pack(padx=10, pady=5)
     mwlf1.pack(anchor="nw", padx=14, pady=10)
 
     mwlf2 = LabelFrame(mw)
@@ -100,7 +103,7 @@ def win_main():
     Label(mwft1, text="2023", padx=7, bg="#AF7AC5",
           font=("Arial", 7, "bold")).pack(side="right")
     
-    btnstate(True)
+    widState(True)
 
     # Main Window Loop
     mw.mainloop()
