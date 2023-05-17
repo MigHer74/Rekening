@@ -2,6 +2,14 @@ from tkinter import *
 
 
 def win_main():
+    def btnstate(state):
+        if state:
+            mwbs.config(state=DISABLED)
+            mwbn.config(state=DISABLED)
+            mwbm.config(state=DISABLED)
+            mwbp.config(state=DISABLED)
+            mwbv.config(state=DISABLED)
+
     def btnSearch():
         print("Search Button Pressed")
         dataSearch = mwes.get()
@@ -39,22 +47,28 @@ def win_main():
 
     # Main Window Buttons
     mwbs = Button(mw, text="Buscar", width=15,
-                  command=btnSearch).place(x=400, y=23)
+                  command=btnSearch)
+    mwbs.place(x=400, y=23)
 
     mwlfb1 = LabelFrame(mw, text=" Receptor ")
     mwbn = Button(mwlfb1, text="Nuevo", width=15,
-                  command=btnNew).pack(padx=10, pady=10)
+                  command=btnNew)
+    mwbn.pack(padx=10, pady=10)
     mwbm = Button(mwlfb1, text="Modificar", width=15,
-                  command=btnModify).pack(pady=10)
+                  command=btnModify)
+    mwbm.pack(pady=10)
     mwlfb1.place(x=388, y=80)
 
     mwlfb2 = LabelFrame(mw, text=" Acciones ")
     mwbp = Button(mwlfb2, text="Cheques a Imprimir", width=15,
-                  command=btnPrint).pack(padx=10, pady=10)
+                  command=btnPrint)
+    mwbp.pack(padx=10, pady=10)
     mwbv = Button(mwlfb2, text="Boveda", width=15,
-                  command=btnVault).pack(pady=10)
-    mwbv = Button(mwlfb2, text="Configuracion", width=15,
-                  command=btnSetup).pack(pady=20)
+                  command=btnVault)
+    mwbv.pack(pady=10)
+    mwbc = Button(mwlfb2, text="Configuracion", width=15,
+                  command=btnSetup)
+    mwbc.pack(pady=20)
     mwlfb2.place(x=388, y=250)
 
     mwbx = Button(mw, text="Salir", width=15,
@@ -85,6 +99,8 @@ def win_main():
           padx=7, bg="#AF7AC5", font=("Arial", 7, "bold")).pack(side="left")
     Label(mwft1, text="2023", padx=7, bg="#AF7AC5",
           font=("Arial", 7, "bold")).pack(side="right")
+    
+    btnstate(True)
 
     # Main Window Loop
     mw.mainloop()
