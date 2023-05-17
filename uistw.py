@@ -9,9 +9,12 @@ def win_setup(ws_status):
         idrece = entryval3.get()
         numfol = entryval4.get()
 
-        datacom = (idcomp, nomcom, idrece, numfol)
-
-        db.insert_company_info(datacom)
+        if not ws_status:
+            datacom = (idcomp, nomcom, idrece, numfol)
+            db.insert_company_info(datacom)
+        else:
+            datacom = (nomcom, idrece, numfol)
+            db.modify_company_info(datacom)
 
         stw.destroy()
 
@@ -44,10 +47,10 @@ def win_setup(ws_status):
     else:
         dw = db.verify_company()
 
-        entryval1.set(dw[1])
-        entryval2.set(dw[2])
-        entryval3.set(dw[3])
-        entryval4.set(dw[4])
+        entryval1.set(dw[0][0])
+        entryval2.set(dw[0][1])
+        entryval3.set(dw[0][2])
+        entryval4.set(dw[0][3])
 
     # SetUp Window - General Information
 
