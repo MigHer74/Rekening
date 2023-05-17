@@ -21,7 +21,9 @@ def win_setup(ws_status):
     def closeDisable():
         pass
 
-    stw = Tk()
+    stw = Toplevel()
+    stw.transient()
+    stw.grab_set()
     stw.title("Rekening - Configuración")
     stw.geometry("580x210")
     stw.resizable(False, False)
@@ -36,9 +38,16 @@ def win_setup(ws_status):
     entryval3 = StringVar()
     entryval4 = IntVar()
 
-    if ws_status:
+    if not ws_status:
         entryval1.set(1)
         entryval3.set("BEN-001")
+    else:
+        dw = db.verify_company()
+
+        entryval1.set(dw[1])
+        entryval2.set(dw[2])
+        entryval3.set(dw[3])
+        entryval4.set(dw[4])
 
     # SetUp Window - General Information
 
