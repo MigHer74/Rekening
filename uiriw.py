@@ -1,6 +1,9 @@
 from tkinter import *
 
 
+def noReceptor():
+        riw.destroy()
+
 def closeDisable():
         pass
 
@@ -31,7 +34,7 @@ Checkbutton(riw, text="Activo", onvalue=1, offvalue=0).place(x=394, y=32)
 # Receptor Information - Buttons
 
 Button(riw, text="Aceptar", width=15).place(x=70, y=120)
-Button(riw, text="Cancelar", width=15).place(x=300, y=120)
+Button(riw, text="Cancelar", width=15, command=noReceptor).place(x=300, y=120)
 
 # Receptor Information - Window Loop
 riw.mainloop()
