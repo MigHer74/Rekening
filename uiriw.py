@@ -2,6 +2,26 @@ from tkinter import *
 import database as db
 
 
+def okReceptor():
+    idrec = entryval1.get()
+    nomrec = entryval2.get()
+    starec = entryval3.get()
+
+    recnewid = []
+    datarec = (idrec, nomrec, starec)
+
+    recserie = int(idrec[4:7])
+    recserie += 1
+    recserie = "BEN-" + str(recserie).zfill(3)
+    recnewid.append(recserie)
+    recnewid = tuple(recnewid)
+
+    db.insert_receptor(datarec)
+    db.update_company_receptor(recnewid)
+
+    riw.destroy()
+
+
 def noReceptor():
     riw.destroy()
 
@@ -47,7 +67,7 @@ Checkbutton(riw, text="Activo", variable=entryval3,
 
 # Receptor Information - Buttons
 
-Button(riw, text="Aceptar", width=15).place(x=70, y=120)
+Button(riw, text="Aceptar", width=15, command=okReceptor).place(x=70, y=120)
 Button(riw, text="Cancelar", width=15, command=noReceptor).place(x=300, y=120)
 
 # Receptor Information - Window Loop
