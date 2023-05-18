@@ -26,13 +26,18 @@ entryval1 = StringVar()
 entryval2 = StringVar()
 entryval3 = IntVar()
 
+dc = db.verify_company()
+
+entryval1.set(dc[0][2])
+entryval3.set(1)
+
 # Receptor Information - LabelFrames, Labels, Entries & Checkbuttons
 
 riwlf = LabelFrame(riw, text=" Información General ", width=458, height=95)
 riwlf.place(x=10, y=5)
 
 Label(riw, text="Id Receptor").place(x=17, y=30)
-Entry(riw, width=6, textvariable=entryval1, state=DISABLED).place(x=90, y=32)
+Entry(riw, width=8, textvariable=entryval1, state=DISABLED).place(x=90, y=32)
 
 Label(riw, text="Nombre").place(x=17, y=60)
 Entry(riw, textvariable=entryval2, width=60).place(x=90, y=62)
