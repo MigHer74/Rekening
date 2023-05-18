@@ -1,5 +1,10 @@
 from tkinter import *
 
+
+def closeDisable():
+        pass
+
+
 riw = Tk()
 # riw.transient()
 # riw.grab_set()
@@ -8,6 +13,7 @@ riw.geometry("480x165")
 riw.resizable(False, False)
 riwicon = PhotoImage(file="icon.png")
 riw.iconphoto(True, riwicon)
+riw.protocol("WM_DELETE_WINDOW", closeDisable)
 
 # Receptor Information - LabelFrames, Labels, Entries & Checkbuttons
 
