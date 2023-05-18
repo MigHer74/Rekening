@@ -26,7 +26,7 @@ def verify_company():
 def insert_company_info(valdb):
     condb = conect_db()
     curdb = condb.cursor()
-    datdb = curdb.execute("INSERT INTO 'company' VALUES(?,?,?,?)", (valdb))
+    curdb.execute("INSERT INTO 'company' VALUES(?,?,?,?)", (valdb))
     condb.commit()
     condb.close()
 
@@ -34,7 +34,7 @@ def insert_company_info(valdb):
 def modify_company_info(valdb):
     condb = conect_db()
     curdb = condb.cursor()
-    datdb = curdb.execute(
+    curdb.execute(
         "UPDATE 'company' SET com_name = ?, com_init_rec = ?, com_init_doc = ? WHERE id_com = 1", (valdb))
     condb.commit()
     condb.close()
@@ -43,7 +43,7 @@ def modify_company_info(valdb):
 def update_company_receptor(valdb):
     condb = conect_db()
     curdb = condb.cursor()
-    datdb = curdb.execute(
+    curdb.execute(
         "UPDATE 'company' SET com_init_rec = ? WHERE id_com = 1", (valdb))
     condb.commit()
     condb.close()
@@ -52,8 +52,7 @@ def update_company_receptor(valdb):
 def insert_receptor(valdb):
     condb = conect_db()
     curdb = condb.cursor()
-    datdb = curdb.execute(
-        "INSERT INTO 'names' VALUES(?,?,?)", (valdb))
+    curdb.execute("INSERT INTO 'names' VALUES(?,?,?)", (valdb))
     condb.commit()
     condb.commit()
     condb.close()
