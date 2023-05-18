@@ -1,11 +1,13 @@
 from tkinter import *
+import database as db
 
 
 def noReceptor():
-        riw.destroy()
+    riw.destroy()
+
 
 def closeDisable():
-        pass
+    pass
 
 
 riw = Tk()
@@ -18,18 +20,25 @@ riwicon = PhotoImage(file="icon.png")
 riw.iconphoto(True, riwicon)
 riw.protocol("WM_DELETE_WINDOW", closeDisable)
 
+# Receptor Information - Variable Declaration
+
+entryval1 = StringVar()
+entryval2 = StringVar()
+entryval3 = IntVar()
+
 # Receptor Information - LabelFrames, Labels, Entries & Checkbuttons
 
 riwlf = LabelFrame(riw, text=" Información General ", width=458, height=95)
 riwlf.place(x=10, y=5)
 
 Label(riw, text="Id Receptor").place(x=17, y=30)
-Entry(riw, width=6, state=DISABLED).place(x=90, y=32)
+Entry(riw, width=6, textvariable=entryval1, state=DISABLED).place(x=90, y=32)
 
 Label(riw, text="Nombre").place(x=17, y=60)
-Entry(riw, width=60).place(x=90, y=62)
+Entry(riw, textvariable=entryval2, width=60).place(x=90, y=62)
 
-Checkbutton(riw, text="Activo", onvalue=1, offvalue=0).place(x=394, y=32)
+Checkbutton(riw, text="Activo", variable=entryval3,
+            onvalue=1, offvalue=0).place(x=394, y=32)
 
 # Receptor Information - Buttons
 
