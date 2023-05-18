@@ -40,12 +40,20 @@ def modify_company_info(valdb):
     condb.close()
 
 
-def insert_receptor(valdb, valdb1):
+def update_company_receptor(valdb):
     condb = conect_db()
     curdb = condb.cursor()
     datdb = curdb.execute(
-        "INSERT INTO 'names' VALUES(id = ?, name = ?, active = ?", (valdb))
+        "UPDATE 'company' SET com_init_rec = ? WHERE id_com = 1", (valdb))
+    condb.commit()
+    condb.close()
+
+
+def insert_receptor(valdb):
+    condb = conect_db()
+    curdb = condb.cursor()
     datdb = curdb.execute(
-        "UPDATE 'company' SET com_init_rec = ? WHERE id_com = 1", (valdb1))
+        "INSERT INTO 'names' VALUES(?,?,?)", (valdb))
+    condb.commit()
     condb.commit()
     condb.close()
