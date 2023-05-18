@@ -20,6 +20,7 @@ def verify_company():
     condb = conect_db()
     curdb = condb.cursor()
     datdb = curdb.execute("SELECT * FROM 'company'").fetchall()
+    condb.close()
     return datdb
 
 
@@ -47,6 +48,15 @@ def update_company_receptor(valdb):
         "UPDATE 'company' SET com_init_rec = ? WHERE id_com = 1", (valdb))
     condb.commit()
     condb.close()
+
+
+def retrieve_all_receptor():
+    condb = conect_db()
+    curdb = condb.cursor()
+    datadb = curdb.execute("SELECT * FROM 'names'").fetchall()
+    condb.commit()
+    condb.close()
+    return datadb
 
 
 def insert_receptor(valdb):
