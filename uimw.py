@@ -2,6 +2,8 @@ from tkinter import *
 from tkinter import messagebox
 import database as db
 import uistw as swst
+import uiriw as swr
+
 
 def win_main():
     def widState(state):
@@ -14,7 +16,8 @@ def win_main():
             mwbp.config(state=DISABLED)
             mwbv.config(state=DISABLED)
 
-            messagebox.showinfo(title="Información Inicial", message='Seleccione "Configuración" e introduzca los valores iniciales o seleccione "Salir"')
+            messagebox.showinfo(title="Información Inicial",
+                                message='Seleccione "Configuración" e introduzca los valores iniciales o seleccione "Salir"')
 
     def btnSearch():
         print("Search Button Pressed")
@@ -22,7 +25,7 @@ def win_main():
         print("Value to search", dataSearch)
 
     def btnNew():
-        print("New Button Pressed")
+        swr.win_receiver(1)
 
     def btnModify():
         print("Modify Button Pressed")
@@ -106,10 +109,10 @@ def win_main():
           padx=7, bg="#AF7AC5", font=("Arial", 7, "bold")).pack(side="left")
     Label(mwft1, text="2023", padx=7, bg="#AF7AC5",
           font=("Arial", 7, "bold")).pack(side="right")
-    
+
     # Functions when starting the window.
     initial = db.verify_company()
-    
+
     widState(initial)
 
     # Main Window Loop
