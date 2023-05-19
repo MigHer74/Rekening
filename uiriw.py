@@ -2,23 +2,24 @@ from tkinter import *
 import database as db
 
 
-def win_receiver(WS_status):
+def win_receiver(ws_status):
     def okReceptor():
-        idrec = entryval1.get()
-        nomrec = entryval2.get()
-        starec = entryval3.get()
+        if ws_status == 1:
+            idrec = entryval1.get()
+            nomrec = entryval2.get()
+            starec = entryval3.get()
 
-        recnewid = []
-        datarec = (idrec, nomrec, starec)
+            recnewid = []
+            datarec = (idrec, nomrec, starec)
 
-        recserie = int(idrec[4:7])
-        recserie += 1
-        recserie = "BEN-" + str(recserie).zfill(3)
-        recnewid.append(recserie)
-        recnewid = tuple(recnewid)
+            recserie = int(idrec[4:7])
+            recserie += 1
+            recserie = "BEN-" + str(recserie).zfill(3)
+            recnewid.append(recserie)
+            recnewid = tuple(recnewid)
 
-        db.insert_receptor(datarec)
-        db.update_company_receptor(recnewid)
+            db.insert_receptor(datarec)
+            db.update_company_receptor(recnewid)
 
         riw.destroy()
 
@@ -28,9 +29,9 @@ def win_receiver(WS_status):
     def closeDisable():
         pass
 
-    riw = Tk()
-    # riw.transient()
-    # riw.grab_set()
+    riw = Toplevel()
+    riw.transient()
+    riw.grab_set()
     riw.title("Rekening - Información del Receptor")
     riw.geometry("480x165")
     riw.resizable(False, False)
