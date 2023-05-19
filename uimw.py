@@ -96,8 +96,10 @@ def win_main():
     mwlfs.config(command=mwlfl.yview)
     mwlfs.pack(side=RIGHT, fill=Y)
 
-    for i in range(1, 101):
-        mwlfl.insert(END, f" Elemento {i} ")
+    data = db.retrieve_all_receptor()
+
+    for element in data:
+        mwlfl.insert(END, element[1])
 
     mwlfl.pack(padx=10, pady=15)
     mwlf2.place(x=14, y=56)
