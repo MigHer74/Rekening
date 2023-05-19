@@ -62,7 +62,7 @@ def retrieve_all_receptor():
 def insert_receptor(valdb):
     condb = conect_db()
     curdb = condb.cursor()
-    curdb.execute("INSERT INTO 'names' VALUES(?,?,?)", (valdb))
+    curdb.execute("INSERT INTO 'receiver' VALUES(?,?,?)", (valdb))
     condb.commit()
     condb.commit()
     condb.close()
