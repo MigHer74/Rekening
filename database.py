@@ -53,7 +53,7 @@ def update_company_receptor(valdb):
 def retrieve_all_receptor():
     condb = conect_db()
     curdb = condb.cursor()
-    datadb = curdb.execute("SELECT * FROM 'names'").fetchall()
+    datadb = curdb.execute("SELECT * FROM 'receiver'").fetchall()
     condb.commit()
     condb.close()
     return datadb
